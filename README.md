@@ -3,6 +3,15 @@ This script will communicate with a JAMF server of your choice and
 update the mobile device name based on an extension attribute stored on the JAMF
 server.
 
+How to automatically manage your iOS device names:
+
+- Create an extension attribute for desired device names in JAMF
+  (e.g. `GivenIOSShortname`)
+- Populate this extension attribute via the Inventory Preload function in JAMF 
+  (found under `Settings > Global Management > Inventory Preload`)
+- Run this script to send MDM commands updating the device names according to the
+  ones defined in the Inventory Preload.   
+
 ## Usage
 ```
 python mobiledevices.py -h
@@ -52,6 +61,9 @@ JAMF server website. Once there, click on the green lock icon to display
 additional information and then click on *More Information* in the Site 
 Security section. In the next window you can click *View Certificate* and then
 under the tab *Details* you can finally export and save the certificate.
+
+Now simply supply the path to the certificate file such that `mobiledevices.py`
+can load it and use it to verify the connection to the JAMF server.
 
 ![Information][info]
 
