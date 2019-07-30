@@ -1,7 +1,25 @@
 # JAMF Mobile Device Updater
 This script will communicate with a JAMF server of your choice and
-update the device name based on an extension attribute stored on the JAMF
+update the mobile device name based on an extension attribute stored on the JAMF
 server.
+
+## Usage
+```
+python mobiledevices.py -h
+usage: mobiledevices.py [-h] [-n] [-s SERIALS [SERIALS ...]]
+                        [--update-all UPDATE_ALL]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -n, --dry-run         If set the dry run option is enabled and no changes
+                        are made.
+  -s SERIALS [SERIALS ...], --serial-numbers SERIALS [SERIALS ...]
+                        Space seperated list of serial numbers to look for and
+                        update. By default it will be set to None and an
+                        information will be printed to the console.
+  --update-all UPDATE_ALL
+                        Will update all devices registered at the JAMF server.
+```
 
 ## Installation
 First install the dependencies you need by using pip. Note that we are 
@@ -44,24 +62,6 @@ under the tab *Details* you can finally export and save the certificate.
 ![Details][details-cert]
 
 ![Export Certificate][export-cert]
-
-## Usage
-```
-python mobiledevices.py -h
-usage: mobiledevices.py [-h] [-n] [-s SERIALS [SERIALS ...]]
-                        [--update-all UPDATE_ALL]
-
-optional arguments:
-  -h, --help            show this help message and exit
-  -n, --dry-run         If set the dry run option is enabled and no changes
-                        are made.
-  -s SERIALS [SERIALS ...], --serial-numbers SERIALS [SERIALS ...]
-                        Space seperated list of serial numbers to look for and
-                        update. By default it will be set to None and an
-                        information will be printed to the console.
-  --update-all UPDATE_ALL
-                        Will update all devices registered at the JAMF server.
-```
 
 
 [info]: images/https-info.png
